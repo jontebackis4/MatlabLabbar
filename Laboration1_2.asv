@@ -1,0 +1,7 @@
+tol = input('tol = ');
+i1 = 1;
+i2 = 2;
+while tol > abs((1/(i1^2) - (1/(i2^2))
+    
+    
+end
