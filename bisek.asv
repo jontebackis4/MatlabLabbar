@@ -1,0 +1,14 @@
+function [ x ] = bisek( func, [a b] )
+%Söker rötter med bisektionsmetoden
+    c = b - (b - a)/2;
+    fc = func(c);
+    tol = 0.5e-4;
+    while( abs(b-c)) > tol
+        if(f(a)<f(b))
+            
+        else
+            
+        end
+    end
+end
+
