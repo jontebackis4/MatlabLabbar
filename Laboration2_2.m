@@ -31,27 +31,34 @@ E1 = RMSE(n, ye, y);
 
 %interp1
 E2 = RMSE(n, yInt, y);
-%disp(['linjint: ' num2str(E2)]);
+disp(['linjint: ' num2str(E2)]);
 
 %spline
 E3 = RMSE(n, ySpl, y);
-%disp(['styck^3:' num2str(E3)]);
+disp(['styck^3:' num2str(E3)]);
 
 hold off;
 
-h = @(n) 4/(n-1);
 
 hold on;
 grid on;
 
-for I = 6:n
-    %scatter(h(I), RMSE(I, ye, y), 'd', 'b');
-    p = log(RMSE(I, yInt, y))/log(h(I));
-    disp(p)
-    scatter(h(I), RMSE(I, yInt, y));
-    scatter(h(I), RMSE(I, ySpl, y), 'r', 'filled');
+for i = 7:30
+    pInt(i-6) = log(RMSE(i, yInt, y)/(RMSE(i-1, yInt, y)))/log((4/(i-1))/(4/(i-2)));
+    pSpl(i-6) = log(RMSE(i, ySpl, y)/(RMSE(i-1, ySpl, y)))/log((4/(i-1))/(4/(i-2)));
+
 end
 
+
+for j = 1:length(pInt)
+    disp(['p för int: ' num2str(pInt(j))]);
+end
+for j = 1:length(pSpl)
+    disp(['p för spl: ' num2str(pSpl(j))]);
+end
+
+%loglog(h, abs(felV), '*');
+%line(h, felV);
 
 
 
