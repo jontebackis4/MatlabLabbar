@@ -1,6 +1,6 @@
-function [ x ] = fixpt( g, x0 )
+function [ x, e ] = fixpt( g, x0 )
 %beräknar rot mha fixpunkts metoden
-    tol = 10e-6;
+    tol = 1e-6;
     x = x0;
     xold = x+1;
     count = 0;
@@ -9,6 +9,7 @@ function [ x ] = fixpt( g, x0 )
         x = g(xold)
         x0 = x;
         count = count +1;
+        e(count) = abs(x - xold);
     end
     x = [x count];
 end

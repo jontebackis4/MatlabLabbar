@@ -4,7 +4,7 @@ function [ x ] = bisek( f, I )
     b = I(2);
     c = b - (b - a)/2;
     fc = f(c);
-    tol = 10e-6;
+    tol = 1e-6;
     count = 0;
     while( abs(b-c)) > tol
         count = count+1;
