@@ -7,7 +7,7 @@ function [ xZero, yZero, xpZero, ypZero, zpZero ] = poi( angXDeg, x0, y0, z0, v0
     angZ = 30*(pi/180);  %Utkastvinkel vertikalt (radianer)
     angX = -angXDeg*(pi/180);   %Sökta vinkeln (radianer)
 
-    t = 0:0.1:2;
+    t = 0:0.1:2.2;
 
     %Beräknar startvärde
     Y0 = startValue(angX, angZ, x0, y0, z0, v0);
@@ -46,13 +46,13 @@ function [ xZero, yZero, xpZero, ypZero, zpZero ] = poi( angXDeg, x0, y0, z0, v0
     
 
     
-    %hold on
-    %grid on
+    hold on
+    grid on
     %scatter(trajDots(:, 1), trajDots(:, 3));
-    %zlabel('z');
-    %xlabel('x');
-    %ylabel('y');
-    %plot3(trajDots(:, 1), trajDots(:, 2), trajDots(:, 3));
+    zlabel('z');
+    xlabel('x');
+    ylabel('y');
+    plot3(trajDots(:, 1), trajDots(:, 2), trajDots(:, 3), 'color', [252/255, 120/255, 12/255]);
 
 end
 

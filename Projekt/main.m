@@ -30,3 +30,8 @@ impOnXaxis = fzero(poiY, 33);
 %disp(impOnXaxis);
 
 trajBounce(impOnXaxis, x, y, z, v);
+
+
+
+
+
