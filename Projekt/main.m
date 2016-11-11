@@ -9,10 +9,10 @@ v = 25;
 
 %kollar  de olika startvinklarna
 for ang = xAng
-    [x, y, xp, yp, zp] = poi(ang, x, y, z, v);
+    [xI, yI, xpI, ypI, zpI] = poi(ang, x, y, z, v);
     %poi(ang);
-    poiV(v-startDeg+1,1) = x;
-    poiV(v-startDeg+1,2) = y;
+    poiV(ang-startDeg+1,1) = xI;
+    poiV(ang-startDeg+1,2) = yI;
 end
 
 %disp([' v      x        y    '])
@@ -22,7 +22,11 @@ end
 %end
 
 %Beräknar utkastvinkeln för nedslag på x-axeln
+grid on;
+hold on;
 poiY = @(angle) spline(xAng, poiV(:, 2), angle);
 impOnXaxis = fzero(poiY, 33);
 %fplot(poiY, [25 45]);
-disp(impOnXaxis);
+%disp(impOnXaxis);
+
+trajBounce(impOnXaxis, x, y, z, v);
