@@ -22,12 +22,14 @@ end
 %end
 
 %Beräknar utkastvinkeln för nedslag på x-axeln
-grid on;
-hold on;
+%grid on;
+%hold on;
 poiY = @(angle) spline(xAng, poiV(:, 2), angle);
 impOnXaxis = fzero(poiY, 33);
 %fplot(poiY, [25 45]);
-%disp(impOnXaxis);
+%line([impOnXaxis impOnXaxis], [-2.5, 2], [0 0], 'LineStyle', '--', 'color', 'red')
+format long;
+disp(impOnXaxis);
 
 %trajBounce(impOnXaxis, x, y, z, v);
 

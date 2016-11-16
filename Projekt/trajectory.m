@@ -10,8 +10,8 @@ function [ Y ] = trajectory( t, Y0 )
     
     F = @(t, Y) [Y(4); Y(5); Y(6); -q(Y)*Y(4); -q(Y)*(Y(5)-a(Y(3))); -9.82-q(Y)*Y(6)];
     
-    
-    [trash, Y] = ode45(F, t, Y0);
+    options = odeset('Reltol',1e-5);
+    [trash, Y] = ode45(F, t, Y0, options);
     
 end
 

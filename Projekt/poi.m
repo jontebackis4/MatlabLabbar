@@ -38,6 +38,9 @@ function [ xZero, yZero, xpZero, ypZero, zpZero ] = poi( angXDeg, x0, y0, z0, v0
     xpZero = fzero(xpInterp, (trajDots(k, 4)+trajDots(end, 4))/2);
     ypZero = fzero(ypInterp, (trajDots(k, 5)+trajDots(end, 5))/2);
     zpZero = fzero(zpInterp, (trajDots(k, 6)+trajDots(end, 6))/2);
+    
+    %scatter(yZero, xZero); 
+    
     %disp(['xp: ' num2str(xpZero)]);
     %disp(['yp: ' num2str(ypZero)]);
     %disp(['zp: ' num2str(zpZero)]);
@@ -46,16 +49,16 @@ function [ xZero, yZero, xpZero, ypZero, zpZero ] = poi( angXDeg, x0, y0, z0, v0
     
 
     
-    hold on
-    grid on
+    %hold on
+    %grid on
     %scatter(xZero, yZero, 'filled', 'red');
     %line([xZero xZero], [yZero, yZero], [-3 6], 'LineStyle', '--', 'color', 'red')
-    line([0 0], [12 -6], [0 0], 'LineStyle', '-', 'color', 'black')
-    zlabel('z');
-    xlabel('x');
-    ylabel('y');
-    view(-90, 90);
-    plot3(trajDots(:, 1), trajDots(:, 2), trajDots(:, 3));%, 'color', [252/255, 120/255, 12/255]);
+    %line([25 45], [0 0], [0 0], 'LineStyle', '-', 'color', 'black')
+    %zlabel('z');
+    %xlabel('vinkel');
+    %ylabel('y');
+    %view(-90, 90);
+    %plot3(trajDots(:, 1), trajDots(:, 2), trajDots(:, 3));%, 'color', [252/255, 120/255, 12/255]);
 
 end
 
