@@ -48,11 +48,14 @@ function [ xZero, yZero, xpZero, ypZero, zpZero ] = poi( angXDeg, x0, y0, z0, v0
     
     hold on
     grid on
-    %scatter(trajDots(:, 1), trajDots(:, 3));
+    %scatter(xZero, yZero, 'filled', 'red');
+    %line([xZero xZero], [yZero, yZero], [-3 6], 'LineStyle', '--', 'color', 'red')
+    line([0 0], [12 -6], [0 0], 'LineStyle', '-', 'color', 'black')
     zlabel('z');
     xlabel('x');
     ylabel('y');
-    plot3(trajDots(:, 1), trajDots(:, 2), trajDots(:, 3), 'color', [252/255, 120/255, 12/255]);
+    view(-90, 90);
+    plot3(trajDots(:, 1), trajDots(:, 2), trajDots(:, 3));%, 'color', [252/255, 120/255, 12/255]);
 
 end
 

@@ -29,7 +29,7 @@ impOnXaxis = fzero(poiY, 33);
 %fplot(poiY, [25 45]);
 %disp(impOnXaxis);
 
-trajBounce(impOnXaxis, x, y, z, v);
+%trajBounce(impOnXaxis, x, y, z, v);
 
 
 
